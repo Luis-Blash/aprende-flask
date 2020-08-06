@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="src/img/favicon.ico" type="image/x-icon">
+    <!-- aqui podemos modificar el titulo -->
+    <title>flask_aprende</title>
+    <!-- Aqui utilizamos bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+    <!-- normalize -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <!-- Mi propio css utilizando url-->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- fontaweson -->
+    <script src="https://kit.fontawesome.com/b61be4fabc.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- header -->
+    <header class="sitio-header posicion-flex-center">
+        <!-- separamos la redes sociales y menu -->
+        <div class="contenedor-header">
+            <a href="index.html" class="pl-4"><img src="src/img/python.png" alt="python-flask"></a>
+            <!-- navegacion menu -->
+            <nav class="m-3 navegacion-header">
+                <a href="index.html" class="pl-4"> Inicio </a>
+                <a href="html/flask.html" class="pl-4"> Flask </a>
+                <a href="https://www.youtube.com/channel/UCoEIYAsPco1b1AKyDDVi3fg" class="pl-4"> Sobre nosotros </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- donde se modificara  -->
+    <!-- bienvenida -->
+    <div class="contenedor pt-3">
+        <div class="jumbotron p-4">
+            <h1 class="display-4">Aprende Flask</h1>
+            <p class="lead">
+                Esta pagina fue creada para enteder como hacer una pagina utilizando flask, el cual nos permite crear de
+                una
+                pagina web muy sencilla
+                utilizando python
+            </p>
+            <hr class="my-4" />
+            <p>
+                si quieres aprender mas sobre flask, puedes visitar su pagina oficial
+            </p>
+            <a class="btn btn-primary btn-lg" href="https://flask.palletsprojects.com/en/1.1.x/" role="button">Flask</a>
+        </div>
+
+    </div>
+
+    <!-- que se utiliza -->
+    <h2>¿Qué necesitas para empezar?</h2>
+    <section class="contenedor">
+        <div class="posicion-flex-center">
+            <div class="flex-columnas">
+                <div class="flex-colum-3">
+                    <!-- card -->
+                    <div class="card-estilo1">
+                        <!-- texto imagen -->
+                        <div>
+                            <i class="fab fa-python"></i>
+                            <h2>Python</h2>
+                            <p> Tener instalado la version de python3 puedes descargarlo desde: </p>
+                        </div>
+                        <!-- contenedor del boton -->
+                        <div class="posicion-flex-right">
+                            <!-- boton -->
+                            <div class="boton boton-flex">
+                                <a class="btn btn-primary" href="https://www.python.org/">python</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex-colum-3">
+                    <div class="card-estilo1">
+                        <!-- texto imagen -->
+                        <div>
+                            <i class="fab fa-python"></i>
+                            <h2>PIP</h2>
+                            <p>Al instalar python vendra por defecto pip, el cual ya no sera necesario instalarlo, en
+                                caso de
+                                tener
+                                una
+                                version inferior de pip, puedes copiar el siguiente comando:
+                            </p>
+                        </div>
+                        <!-- contenedor del boton -->
+                        <div class="codigo">
+                            <div> Ubuntu <button class="btn btn-sm btn-secondary"
+                                    onclick="copiarCode('c1')">Copiar</button>
+                            </div>
+                            <hr>
+                            <code id="c1" class="pl-3"> sudo apt-get install python3-pip</code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex-colum-3">
+                    <!-- card -->
+                    <div class="card-estilo1">
+                        <!-- texto imagen -->
+                        <div>
+                            <i class="fab fa-python"></i>
+                            <h2>virtualenv</h2>
+                            <p>Es recomendable que trabajes utilizando virtualenv para crear entornos aislados para
+                                Python, en
+                                los
+                                que es
+                                posible instalar paquetes sin interferir con otros virtualenvs ni con los paquetes de
+                                Python del
+                                sistema. <br>
+                                puedes instalarlo con el siguiente comando
+                            </p>
+                        </div>
+                        <!-- contenedor del boton -->
+                        <div class="codigo">
+                            <div> PIP <button class="btn btn-sm btn-secondary"
+                                    onclick="copiarCode('c2')">Copiar</button></div>
+                            <hr>
+                            <code id="c2" class="pl-3"> pip install virtualenv</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- docker -->
+    <section class="contenedor">
+        <div class="posicion-flex-center">
+            <div class="card-estilo2">
+                <h2>Trabaja en docker</h2>
+                <img src="src/img/python.png" alt="imagen de python flask con docker">
+                <div class="">
+                    <p>
+                        Tambien puedes trabajar en docker de esta forma no necesitaras instalar nada en tu computadora y
+                        podras
+                        hacer tus proyectos de forma sencilla, te recomiendo que veas el video de Flask en
+                        docker.
+                    </p>
+                </div>
+                <iframe class="" src="https://www.youtube.com/embed/h6kalPtFKfo" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+    <!-- ejemplo prueba -->
+    <section class="contenedor posicion-flex-center">
+        <!-- card contenido -->
+        <div class="card-contenido">
+            <h2>Es tan facil empezar con tan solo hacer esto</h2>
+            <div class="cuadro">
+                <code class="carta-code">
+                    <span class="comentario">#importamos flask, puedes instalarlo utilizando pip install
+                        flask</span>
+                    <br>
+                    <span class="rojo-claro">from</span> flask <span class="rojo-claro">import</span> Flask
+                    <br>
+                    <span class="comentario">#creamos una aplicacion Flask</span>
+                    <br>
+                    <span>app<span class="rojo-claro"> = </span>Flask<span class="amarrillo">(</span>__name__<span
+                            class="amarrillo">)</span></span>
+                    <br>
+                    <span class="comentario">#creamos una ruta</span>
+                    <br>
+                    <span><span class="verde">@app.route</span><span class="amarrillo">("/")</span></span>
+                    <br>
+                    <span><span class="azul">def </span><span class="verde">index</span>
+                        <span class="amarrillo">()</span>:</span>
+                    <br>
+                    <span class="dentro-fun"><span class="rojo-claro">return </span>
+                        <span class="amarrillo">"Hello wordl"</span></span>
+                    <br>
+                    <span><span class="rojo-claro">if </span> __name__<span class="rojo-claro"> == </span><span
+                            class="amarrillo">"__main__"</span> :</span>
+                    <br>
+                    <span class="dentro-fun">app.run<span class="amarrillo">(</span>debug
+                        <span class="rojo-claro">=</span><span class="morado"> True</span>
+                        <span class="amarrillo">)</span></span>
+                    <br>
+                    <span class="comentario">#prende nuestro servidor y el debug ayuda hacer cambios sin necesidad de
+                        volver
+                        a prender</span>
+                </code>
+                <div class="img2">
+                    <img src="src/img/hello-world.png" alt="">
+                </div>
+            </div>
+            <div class="posicion-flex-center">
+                <a class="btn btn-lg btn-outline-success" href="/html/flask.html">Empieza a aprender</a>
+            </div>
+        </div>
+    </section>
+    <!-- footer -->
+    <footer class="site-footer">
+        <!-- separamos la redes sociales y menu -->
+        <div class="contenedor contenedor-footer">
+            <!-- redes sociales -->
+            <nav class="navegacion-footer">
+                <a class="pl-3" href="https://github.com/Luis-Blash"><i class="fab fa-github-alt"></i></a>
+                <a class="pl-3" href="https://www.youtube.com/channel/UCoEIYAsPco1b1AKyDDVi3fg"><i
+                        class="fab fa-youtube"></i> </a>
+                <a class="pl-3" href="https://twitter.com/blashtree"><i class="fab fa-twitter"></i></a>
+            </nav>
+            <!-- navegacion menu -->
+            <nav class="navegacion-footer pt-3">
+                <a href="index.html" class="pl-4"> Inicio</a>
+                <a href="html/flask.html" class="pl-4"> Flask </a>
+                <a href="https://www.youtube.com/channel/UCoEIYAsPco1b1AKyDDVi3fg" class="pl-4"> Sobre nosotros </a>
+            </nav>
+
+        </div>
+        <div class="yo">
+            <span>Pagina Creada por Luis Enrique Ocampo Gonzalez</span>
+        </div>
+    </footer>
+    <!-- fin de footer -->
+    <script src="js/jQuery_v3.5.1.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
