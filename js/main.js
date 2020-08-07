@@ -8,7 +8,9 @@ function copiarCode(id_elemento) {
     document.body.removeChild(aux);
 }
 
+/*
 $(document).ready(function () {
+    $('.collapse').collapse()
     //funciones
     function infoHide(muestra,id,noHide){
         for (let i = 0; i < id.length; i++) {
@@ -50,4 +52,4 @@ $(document).ready(function () {
 
 
     
-});
+});*/

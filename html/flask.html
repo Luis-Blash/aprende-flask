@@ -8,8 +8,9 @@
     <!-- aqui podemos modificar el titulo -->
     <title>flask_aprende</title>
     <!-- Aqui utilizamos bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <!-- -Normalize -->
     <link rel="stylesheet" href="../css/normalize.css">
     <!-- Mi propio css utilizando url-->
@@ -33,33 +34,39 @@
         </div>
     </header>
 
-    <!-- posicion -->
     <div class="contenedor posicion-flex-center">
-        <!-- menu -->
-        <div class="info-flex">
+        <!-- padre accordion -->
+        <div class="info-flex accordion" id="accordionpadre">
             <div class="menu-flask">
-                <a href="#" id="b1">Estructura de flask</a>
-                <a href="#" id="b2">Rutas</a>
+                <a role="button" href="#" data-toggle="collapse" data-target="#uno" aria-expanded="true"
+                    aria-controls="uno">Estructura de flask</a>
+                <a role="button" href="#" data-toggle="collapse" data-target="#dos" aria-expanded="true"
+                    aria-controls="dos">Rutas</a>
+                <a role="button" href="#" data-toggle="collapse" data-target="#tres" aria-expanded="true"
+                    aria-controls="tres">Templates</a>
             </div>
             <div class="info">
-                <div id="i0">
+                <!-- Inicio -->
+                <div id="" class="collapse show" data-parent="#accordionpadre">
                     <div class="temas">
                         <img class="img1" src="../src/img/python.png" alt="imagen flask">
                         <h2>Escoge un tema para ir aprendiendo</h2>
                         <p>
-                            Los temas van de forma secuencial o si tienes duda, simple presiona uno para empezar a ver
+                            Los temas van de forma secuencial o si tienes duda, simple presiona uno para empezar a
+                            ver
                             los
                             ejemplos
                         </p>
                     </div>
                 </div>
                 <!-- Tema Estructura -->
-                <div id="i1">
+                <div id="uno" class="collapse" data-parent="#accordionpadre">
                     <div class="temas">
                         <h2>Estructura de flask</h2>
                         <p>
                             Antes de empezar a utilizar flask, su estructura que maneja es de la siguiente manera
-                            Primero tus archivos <span class="amarrillo">python</span> y a la misma altura la carpeta
+                            Primero tus archivos <span class="amarrillo">python</span> y a la misma altura la
+                            carpeta
                             <span class="cafe">templates</span> en la cual iran tus html y tus archivos como
                             <span class="azul">css</span>,<span class="verde">imagenes</span>,
                             <span class="amarrillo">Javascript</span>, en la carpeta <span
@@ -69,14 +76,16 @@
                     </div>
                 </div>
                 <!-- Temas Rutas -->
-                <div id="i2">
+                <div id="dos" class="collapse" data-parent="#accordionpadre">
                     <div class="temas">
                         <h2>Rutas</h2>
                         <p>
-                            Unas de las principales caracteristicas de Flask, la cual es muy comodo es la creacion de
+                            Unas de las principales caracteristicas de Flask, la cual es muy comodo es la creacion
+                            de
                             <span class="naranja">rutas</span>
                             Consiste en crear una <span class="naranja">ruta</span>, la cual se le asigan una
-                            <span class="azul">metodo</span> que se le asigna a ella. Una forma de enseñarlo seria de
+                            <span class="azul">metodo</span> que se le asigna a ella. Una forma de enseñarlo seria
+                            de
                             esta
                             forma:
                         </p>
@@ -99,8 +108,8 @@
                             <span class="dentro-fun"><span class="rojo-claro">return </span>
                                 <span class="amarrillo">"Hello wordl"</span></span>
                             <br>
-                            <span><span class="rojo-claro">if </span> __name__<span class="rojo-claro"> == </span><span
-                                    class="amarrillo">"__main__"</span> :</span>
+                            <span><span class="rojo-claro">if </span> __name__<span class="rojo-claro"> ==
+                                </span><span class="amarrillo">"__main__"</span> :</span>
                             <br>
                             <span class="dentro-fun">app.run<span class="amarrillo">(</span>debug
                                 <span class="rojo-claro">=</span><span class="morado"> True</span>
@@ -131,13 +140,15 @@
                         <img class="img3" src="../src/img/ruta-hola.png" alt="hello-world">
                         <h3>Rutas con variables</h3>
                         <p>
-                            Podemos crear <span class="naranja">rutas</span> por defectos o que reciban alguna variable,
+                            Podemos crear <span class="naranja">rutas</span> por defectos o que reciban alguna
+                            variable,
                             de
                             tipo <span class="naranja">String</span>, <span class="azul">Int</span>,
                             <span class="morado">Float</span> y dicha variable ser utilizada en el metodo. Como se
                             muestra
                             a continuación, vemos que al no poner nada entra a una pagina con una variable por
-                            defecto (imagen 1), pero al darle una dato podemos ver el dato recibido en pantalla (imagen
+                            defecto (imagen 1), pero al darle una dato podemos ver el dato recibido en pantalla
+                            (imagen
                             2)
                         </p>
                         <!-- tercer codigo -->
@@ -150,12 +161,12 @@
                             <span class="comentario"># ruta con el dato que recibe</span>
                             <br>
                             <span><span class="verde">@app.route</span><span
-                                    class="amarrillo">("/usuario//&#60;string:user&#62;")</span></span>
+                                    class="amarrillo">("/usuario/&#60;string:user&#62;")</span></span>
                             <br>
                             <span>
                                 <span class="azul">def </span><span class="verde">usuario</span>
                                 <span class="amarrillo">(</span>
-                                <span class="rojo-claro">user=</span>
+                                <span class="rojo-claro">user =</span>
                                 <span class="morado">"por defecto no hay nombre"</span>
                                 <span class="amarrillo">)</span>:
                             </span>
@@ -167,11 +178,56 @@
                         </code>
                         <img class="img3" src="../src/img/ruta-pordefecto.png" alt="ruta por defecto">
                         <img class="img3" src="../src/img/ruta-condato.png" alt="ruta por defecto">
+                        <h3>Ejemplo de uso de las variables</h3>
+                        <p>Un ejemplo practico seria al recibir el <span class="morado">id</span> y el <span
+                                class="naranja">usuario</span>, para asi mostrar una pagina
+                            personalizada para la persona</p>
+                        <!-- cuarto codigo -->
+                        <code class="carta-code-flask">
+                            <span class="comentario"># Creamos lsa dos rutas una opcional y una donde si
+                                entro</span>
+                            <br>
+                            <span><span class="verde">@app.route</span>
+                                <span class="amarrillo">("/user/")</span></span>
+                            <br>
+                            <span><span class="verde">@app.route</span>
+                                <span
+                                    class="amarrillo">("/user/&#60;string:id&#62;/&#60;string:username&#62;")</span></span>
+                            <br>
+                            <span>
+                                <span class="azul">def </span><span class="verde">usuario</span>
+                                <span class="amarrillo">(</span>
+                                <span class="rojo-claro">id =</span>
+                                <span class="morado">0</span>,
+                                <span class="rojo-claro">username =</span>
+                                <span class="morado">"No existe"</span>
+                                <span class="amarrillo">)</span>:
+                            </span>
+                            <br>
+                            <span class="dentro-fun">
+                                <span class="rojo-claro">return </span>
+                                <span class="amarrillo">"ID: {}, Nombre de usuario:
+                                    {}".format(id,username)</span></span>
+                            <br>
+                        </code>
+                        <img class="img3" src="../src/img/ejemplo_sinDato.png" alt="ruta por defecto">
+                        <img class="img3" src="../src/img/ejemplo_conDato.png" alt="ruta por con dato">
+                    </div>
+                </div>
+                <div id="tres" class="collapse" data-parent="#accordionpadre">
+                    <div class="temas">
+                        <h2>Templates</h2>
+                        <p>Los templates (platillas) es una forma de representar datos de forma legible ahora bien en
+                            Flask nos deja mostar estas platillas de forma mas practica, podemos llamar nuestro archivo
+                            desde una carpeta llamada <span class="cafe">Templates</span> utilizando otro de sus
+                            metodos, el cual es <span class="rojo-claro">render_template</span></p>
+                        
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
     <!-- footer -->
     <footer class="site-footer">
         <!-- separamos la redes sociales y menu -->
@@ -196,7 +252,17 @@
         </div>
     </footer>
     <!-- fin de footer -->
-    <script src="../js/jQuery_v3.5.1.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+    </script>
     <script src="../js/main.js"></script>
 </body>
 
