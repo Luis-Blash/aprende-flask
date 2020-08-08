@@ -15,7 +15,7 @@ h2,
 h3 {
     text-align: center;
     text-transform: uppercase;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     padding-top: 0.2rem;
 }
 
@@ -42,7 +42,7 @@ p {
 
 /*  utilidades  ==========*/
 .contenedor {
-    max-width: 1200px;
+    max-width: 1318px;
     width: 95%;
     margin: 10px auto;
 }
@@ -322,6 +322,16 @@ p {
 
 .carta-code-flask {
     width: 80%;
+    padding-bottom: 20px;
+}
+
+.barra-lenguaje{
+    width: 75px;
+    background-color: #b1b1b1;
+    border-radius: 50px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #0e0d0d;
 }
 
 /*  COLORES ++++++++++++++++++++++++++++++++  */

@@ -4,17 +4,17 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="src/img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="src/img/favicon.ico" type="image/x-icon" />
     <!-- aqui podemos modificar el titulo -->
     <title>flask_aprende</title>
     <!-- Aqui utilizamos bootstrap -->
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
     <!-- -Normalize -->
-    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/normalize.css" />
     <!-- Mi propio css utilizando url-->
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style.css" />
     <!-- fontaweson -->
     <script src="https://kit.fontawesome.com/b61be4fabc.js" crossorigin="anonymous"></script>
 </head>
@@ -24,12 +24,14 @@
     <header class="sitio-header posicion-flex-center">
         <!-- separamos la redes sociales y menu -->
         <div class="contenedor-header">
-            <a href="../index.html" class="pl-4"><img src="../src/img/python.png" alt="python-flask"></a>
+            <a href="../index.html" class="pl-4"><img src="../src/img/python.png" alt="python-flask" /></a>
             <!-- navegacion menu -->
             <nav class="m-3 navegacion-header">
                 <a href="../index.html" class="pl-4"> Inicio </a>
                 <a href="flask.html" class="pl-4"> Flask </a>
-                <a href="https://www.youtube.com/channel/UCoEIYAsPco1b1AKyDDVi3fg" class="pl-4"> Sobre nosotros </a>
+                <a href="https://www.youtube.com/channel/UCoEIYAsPco1b1AKyDDVi3fg" class="pl-4">
+                    Sobre nosotros
+                </a>
             </nav>
         </div>
     </header>
@@ -44,18 +46,20 @@
                     aria-controls="dos">Rutas</a>
                 <a role="button" href="#" data-toggle="collapse" data-target="#tres" aria-expanded="true"
                     aria-controls="tres">Templates</a>
+                <a role="button" href="#" data-toggle="collapse" data-target="#cuatro" aria-expanded="true"
+                    aria-controls="cuatro">Motor de vistas (Jinja)</a>
+                <a role="button" href="#" data-toggle="collapse" data-target="#cinco" aria-expanded="true"
+                    aria-controls="cinco">Motor de plantilla</a>
             </div>
             <div class="info">
                 <!-- Inicio -->
                 <div id="" class="collapse show" data-parent="#accordionpadre">
                     <div class="temas">
-                        <img class="img1" src="../src/img/python.png" alt="imagen flask">
+                        <img class="img1" src="../src/img/python.png" alt="imagen flask" />
                         <h2>Escoge un tema para ir aprendiendo</h2>
                         <p>
-                            Los temas van de forma secuencial o si tienes duda, simple presiona uno para empezar a
-                            ver
-                            los
-                            ejemplos
+                            Los temas van de forma secuencial o si tienes duda, simple
+                            presiona uno para empezar a ver los ejemplos
                         </p>
                     </div>
                 </div>
@@ -64,15 +68,15 @@
                     <div class="temas">
                         <h2>Estructura de flask</h2>
                         <p>
-                            Antes de empezar a utilizar flask, su estructura que maneja es de la siguiente manera
-                            Primero tus archivos <span class="amarrillo">python</span> y a la misma altura la
-                            carpeta
-                            <span class="cafe">templates</span> en la cual iran tus html y tus archivos como
-                            <span class="azul">css</span>,<span class="verde">imagenes</span>,
-                            <span class="amarrillo">Javascript</span>, en la carpeta <span
-                                class="amarrillo">static</span>
+                            Antes de empezar a utilizar flask, su estructura que maneja es
+                            de la siguiente manera Primero tus archivos
+                            <span class="amarrillo">python</span> y a la misma altura la
+                            carpeta <span class="cafe">templates</span> en la cual iran tus
+                            html y tus archivos como <span class="azul">css</span>,<span class="verde">imagenes</span>,
+                            <span class="amarrillo">Javascript</span>, en la carpeta
+                            <span class="amarrillo">static</span>
                         </p>
-                        <img class="" src="../src/img/estructura_pagina.png" alt="Imagen estructura">
+                        <img class="" src="../src/img/estructura_pagina.png" alt="Imagen estructura" />
                     </div>
                 </div>
                 <!-- Temas Rutas -->
@@ -80,18 +84,22 @@
                     <div class="temas">
                         <h2>Rutas</h2>
                         <p>
-                            Unas de las principales caracteristicas de Flask, la cual es muy comodo es la creacion
-                            de
+                            Unas de las principales caracteristicas de Flask, la cual es muy
+                            comodo es la creacion de
                             <span class="naranja">rutas</span>
-                            Consiste en crear una <span class="naranja">ruta</span>, la cual se le asigan una
-                            <span class="azul">metodo</span> que se le asigna a ella. Una forma de enseñarlo seria
-                            de
-                            esta
-                            forma:
+                            Consiste en crear una <span class="naranja">ruta</span>, la cual
+                            se le asigan una <span class="azul">metodo</span> que se le
+                            asigna a ella. Una forma de enseñarlo seria de esta forma:
                         </p>
                         <!-- primero codigo -->
                         <code class="carta-code-flask">
-                            <span class="rojo-claro">from</span> flask <span class="rojo-claro">import</span> Flask
+                            <div class="posicion-flex-right">
+                                <div class="barra-lenguaje">
+                                    <span>python</span>
+                                </div>
+                            </div>
+                            <span class="rojo-claro">from</span> flask
+                            <span class="rojo-claro">import</span> Flask
                             <br>
                             <span>app<span class="rojo-claro"> = </span>Flask<span
                                     class="amarrillo">(</span>__name__<span class="amarrillo">)</span></span>
@@ -106,24 +114,31 @@
                                 <span class="amarrillo">()</span>:</span>
                             <br>
                             <span class="dentro-fun"><span class="rojo-claro">return </span>
-                                <span class="amarrillo">"Hello wordl"</span></span>
+                                <span class="amarrillo">"Hello world"</span></span>
                             <br>
-                            <span><span class="rojo-claro">if </span> __name__<span class="rojo-claro"> ==
-                                </span><span class="amarrillo">"__main__"</span> :</span>
+                            <span><span class="rojo-claro">if </span> __name__<span class="rojo-claro">
+                                    == </span><span class="amarrillo">"__main__"</span> :</span>
                             <br>
                             <span class="dentro-fun">app.run<span class="amarrillo">(</span>debug
                                 <span class="rojo-claro">=</span><span class="morado"> True</span>
                                 <span class="amarrillo">)</span></span>
                             <br>
                         </code>
-                        <img class="img3" src="../src/img/hello-world.png" alt="hello-world">
+                        <img class="img3" src="../src/img/hello-world.png" alt="hello-world" />
 
                         <h3>Rutas con nombre</h3>
-                        <p>Pero podemos crear <span class="naranja">rutas</span>
-                            con diferentes nombres de una manera tan sencilla como hacer esto
+                        <p>
+                            Pero podemos crear <span class="naranja">rutas</span>
+                            con diferentes nombres de una manera tan sencilla como hacer
+                            esto
                         </p>
                         <!-- segundo codigo -->
                         <code class="carta-code-flask">
+                            <div class="posicion-flex-right">
+                                <div class="barra-lenguaje">
+                                    <span>python</span>
+                                </div>
+                            </div>
                             <span class="comentario">#creamos otra ruta con otro nombre</span>
                             <br>
                             <span class="comentario">#'/hola' indica la nueva raiz</span>
@@ -137,22 +152,26 @@
                                 <span class="amarrillo">"hola"</span></span>
                             <br>
                         </code>
-                        <img class="img3" src="../src/img/ruta-hola.png" alt="hello-world">
+                        <img class="img3" src="../src/img/ruta-hola.png" alt="hello-world" />
                         <h3>Rutas con variables</h3>
                         <p>
-                            Podemos crear <span class="naranja">rutas</span> por defectos o que reciban alguna
-                            variable,
-                            de
-                            tipo <span class="naranja">String</span>, <span class="azul">Int</span>,
-                            <span class="morado">Float</span> y dicha variable ser utilizada en el metodo. Como se
-                            muestra
-                            a continuación, vemos que al no poner nada entra a una pagina con una variable por
-                            defecto (imagen 1), pero al darle una dato podemos ver el dato recibido en pantalla
-                            (imagen
-                            2)
+                            Podemos crear <span class="naranja">rutas</span> por defectos o
+                            que reciban alguna variable, de tipo
+                            <span class="naranja">String</span>,
+                            <span class="azul">Int</span>,
+                            <span class="morado">Float</span> y dicha variable ser utilizada
+                            en el metodo. Como se muestra a continuación, vemos que al no
+                            poner nada entra a una pagina con una variable por defecto
+                            (imagen 1), pero al darle una dato podemos ver el dato recibido
+                            en pantalla (imagen 2)
                         </p>
                         <!-- tercer codigo -->
                         <code class="carta-code-flask">
+                            <div class="posicion-flex-right">
+                                <div class="barra-lenguaje">
+                                    <span>python</span>
+                                </div>
+                            </div>
                             <span class="comentario">#esta ruta es por defecto</span>
                             <br>
                             <span><span class="verde">@app.route</span><span
@@ -176,14 +195,22 @@
                             </span>
                             <br>
                         </code>
-                        <img class="img3" src="../src/img/ruta-pordefecto.png" alt="ruta por defecto">
-                        <img class="img3" src="../src/img/ruta-condato.png" alt="ruta por defecto">
+                        <img class="img3" src="../src/img/ruta-pordefecto.png" alt="ruta por defecto" />
+                        <img class="img3" src="../src/img/ruta-condato.png" alt="ruta por defecto" />
                         <h3>Ejemplo de uso de las variables</h3>
-                        <p>Un ejemplo practico seria al recibir el <span class="morado">id</span> y el <span
-                                class="naranja">usuario</span>, para asi mostrar una pagina
-                            personalizada para la persona</p>
+                        <p>
+                            Un ejemplo practico seria al recibir el
+                            <span class="morado">id</span> y el
+                            <span class="naranja">usuario</span>, para asi mostrar una
+                            pagina personalizada para la persona
+                        </p>
                         <!-- cuarto codigo -->
                         <code class="carta-code-flask">
+                            <div class="posicion-flex-right">
+                                <div class="barra-lenguaje">
+                                    <span>python</span>
+                                </div>
+                            </div>
                             <span class="comentario"># Creamos lsa dos rutas una opcional y una donde si
                                 entro</span>
                             <br>
@@ -210,18 +237,319 @@
                                     {}".format(id,username)</span></span>
                             <br>
                         </code>
-                        <img class="img3" src="../src/img/ejemplo_sinDato.png" alt="ruta por defecto">
-                        <img class="img3" src="../src/img/ejemplo_conDato.png" alt="ruta por con dato">
+                        <img class="img3" src="../src/img/ejemplo_sinDato.png" alt="ruta por defecto" />
+                        <img class="img3" src="../src/img/ejemplo_conDato.png" alt="ruta por con dato" />
                     </div>
                 </div>
+                <!-- tema Templates -->
                 <div id="tres" class="collapse" data-parent="#accordionpadre">
                     <div class="temas">
                         <h2>Templates</h2>
-                        <p>Los templates (platillas) es una forma de representar datos de forma legible ahora bien en
-                            Flask nos deja mostar estas platillas de forma mas practica, podemos llamar nuestro archivo
-                            desde una carpeta llamada <span class="cafe">Templates</span> utilizando otro de sus
-                            metodos, el cual es <span class="rojo-claro">render_template</span></p>
-                        
+                        <p>
+                            Los templates (platillas) es una forma de representar datos de
+                            forma legible ahora bien en Flask nos deja mostar estas
+                            platillas de forma mas practica, podemos llamar nuestro archivo
+                            desde una carpeta llamada
+                            <span class="cafe">Templates</span> utilizando otro de sus
+                            metodos de Flask, el cual es
+                            <span class="rojo-claro">render_template</span>. Tenemos el
+                            siguinete codigo:
+                        </p>
+                        <!-- primero codigo -->
+                        <code class="carta-code-flask">
+                            <!-- Tipo de archivo -->
+                            <div class="posicion-flex-right">
+                                <div class="barra-lenguaje">
+                                    <span>python</span>
+                                </div>
+                            </div>
+                            <span class="rojo-claro">from</span> flask
+                            <span class="rojo-claro">import</span> Flask, render_template
+                            <br>
+                            <span class="comentario"># Nosotros podemos indicar el lugar de la carpeta templates
+                                con:</span>
+                            <br>
+                            <span class="comentario"># app = Flask(__name__, template_folder="."), por defecto
+                                Flask la busca en una carpeta llama 'templates'
+                            </span>
+                            <br>
+                            <span>app<span class="rojo-claro"> = </span>Flask<span
+                                    class="amarrillo">(</span>__name__<span class="amarrillo">)</span></span>
+                            <br>
+                            <span><span class="verde">@app.route</span><span class="amarrillo">("/")</span></span>
+                            <br>
+                            <span><span class="azul">def </span><span class="verde">index</span>
+                                <span class="amarrillo">()</span>:</span>
+                            <br>
+                            <span class="comentario"># Aqui llamamos el archivo index.html</span>
+                            <br>
+                            <span class="dentro-fun"><span class="rojo-claro">return </span>render_template(
+                                <span class="amarrillo">"index.html"</span>)</span>
+                            <br>
+                            <span><span class="rojo-claro">if </span> __name__<span class="rojo-claro">
+                                    == </span><span class="amarrillo">"__main__"</span> :</span>
+                            <br>
+                            <span class="dentro-fun">app.run<span class="amarrillo">(</span>debug
+                                <span class="rojo-claro">=</span><span class="morado"> True</span>
+                                <span class="amarrillo">)</span>
+                            </span>
+                        </code>
+                        <p>Las carpetas estan acodadas de esta manera, no lo olvides</p>
+                        <img class="img3" src="../src/img/estructura_pagina.png" alt="Estructura de carpetas" />
+                        <p>Se veria de esta forma</p>
+                        <!-- codigo html -->
+                        <code class="carta-code-flask">
+                            <div class="posicion-flex-right">
+                                <div class="barra-lenguaje">
+                                    <span>HTML</span>
+                                </div>
+                            </div>
+                            <span class="cafe">&#60;!DOCTYPE html&#62;</span>
+                            <br>
+                            <span><span class="azul">&#60;html </span><span class="verde">lang=</span><span
+                                    class="morado">"en"</span>&#62;</span>
+                            <br>
+                            <span class="azul">&#60;head&#62;</span>
+                            <br>
+                            <span class="dentro-fun">
+                                <span><span class="azul">&#60;meta </span><span class="verde">charset=</span><span
+                                        class="morado">"UTF-8"</span>&#62;</span>
+                            </span>
+                            <br>
+                            <span class="dentro-fun">
+                                <span>
+                                    <span class="azul">&#60;meta </span><span class="verde">name=</span><span
+                                        class="morado">"viewport"</span><span class="verde">contet=</span><span
+                                        class="morado">"width=device-width, initial-scale=1.0"</span>&#62;
+                                </span>
+                            </span>
+                            <br>
+                            <span class="dentro-fun">
+                                <span class="azul">&#60;title&#62;</span>Index<span class="azul">&#60;/title&#62;</span>
+                            </span>
+                            <br>
+                            <span class="azul">&#60;/head&#62;</span>
+                            <br>
+                            <span class="azul">&#60;body&#62;</span>
+                            <br>
+                            <span class="dentro-fun">
+                                <span class="azul">&#60;h1&#62;</span>Hola mundo<span class="azul">&#60;/h1&#62;</span>
+                            </span>
+                            <br>
+                            <span class="azul">&#60;/body&#62;</span>
+                            <br>
+                            <span class="azul">&#60;/html&#62;</span>
+                        </code>
+                        <img class="img3" src="../src/img/render_template_index.png" alt="index.html" />
+                        <p>
+                            de una manera muy sencilla podemos llamar a nuestros archivos
+                            html
+                        </p>
+                    </div>
+                </div>
+                <!-- motores de vistas -->
+                <div id="cuatro" class="collapse" data-parent="#accordionpadre">
+                    <div class="temas">
+                        <h2>Motor de vistas (Jinja)</h2>
+                        <p>
+                            Le motor de vista el cual es Jinja, el cual nos permite
+                            intercambiar datos desde del backend al frontend, para saber mas puedes visitar su pagina
+                            oficial dando click aqui <a href="https://jinja.palletsprojects.com/en/2.11.x/"
+                                class="text-info">Jinja</a>
+                        </p>
+                        <p>
+                            Utilizando de nueva cuenta <span class="cafe">render_template</span>, podemos ver un ejemplo
+                            de esta manera:
+                        </p>
+                        <!-- codigo 1 -->
+                        <code class="carta-code-flask">
+                            <div class="posicion-flex-right">
+                                <div class="barra-lenguaje">
+                                    <span>python</span>
+                                </div>
+                            </div>
+                            <span class="rojo-claro">from</span> flask
+                            <span class="rojo-claro">import</span> Flask, render_template
+                            <br>
+                            <span>app<span class="rojo-claro"> = </span>Flask<span
+                                    class="amarrillo">(</span>__name__<span class="amarrillo">)</span></span>
+                            <br>
+                            <span class="verde">@app.route</span><span class="amarrillo">("/")</span>
+                            <br>
+                            <span class="azul">def </span><span class="verde">index</span>
+                            <span class="amarrillo">()</span>:
+                            <br>
+                            <span class="dentro-fun">
+                                <span class="comentario"># Aqui declaramos la variable que va recibir el archivo</span>
+                            </span>
+                            <br>
+                            <span class="dentro-fun">
+                                nombre = <span class="morado">"Flask"</span>
+                            </span>
+                            <br>
+                            <span class="dentro-fun">
+                                <span class="rojo-claro">return </span>render_template(<span
+                                    class="amarrillo">"index.html"</span>,nombre = nombre)
+                            </span>
+                            <br>
+                            <span class="rojo-claro">if </span> __name__<span class="rojo-claro">
+                                == </span><span class="amarrillo">"__main__"</span> :
+                            <br>
+                            <span class="dentro-fun">
+                                app.run<span class="amarrillo">(</span>debug
+                                <span class="rojo-claro">=</span><span class="morado"> True</span>
+                                <span class="amarrillo">)</span>
+                            </span>
+                        </code>
+                        <p>El codigo en HTML se veria de la siguiente manera</p>
+                        <!-- codigo html 1 -->
+                        <code class="carta-code-flask">
+                            <div class="posicion-flex-right">
+                                <div class="barra-lenguaje">
+                                    <span>HTML</span>
+                                </div>
+                            </div>
+                            <span class="cafe">&#60;!DOCTYPE html&#62;</span>
+                            <br>
+                            <span><span class="azul">&#60;html </span><span class="verde">lang=</span><span
+                                    class="morado">"en"</span>&#62;</span>
+                            <br>
+                            <span class="azul">&#60;head&#62;</span>
+                            <br>
+                            <span class="dentro-fun">
+                                <span><span class="azul">&#60;meta </span><span class="verde">charset=</span><span
+                                        class="morado">"UTF-8"</span>&#62;</span>
+                            </span>
+                            <br>
+                            <span class="dentro-fun">
+                                <span>
+                                    <span class="azul">&#60;meta </span><span class="verde">name=</span><span
+                                        class="morado">"viewport"</span><span class="verde">contet=</span><span
+                                        class="morado">"width=device-width, initial-scale=1.0"</span>&#62;
+                                </span>
+                            </span>
+                            <br>
+                            <span class="dentro-fun">
+                                <span class="azul">&#60;title&#62;</span>Index<span class="azul">&#60;/title&#62;</span>
+                            </span>
+                            <br>
+                            <span class="azul">&#60;/head&#62;</span>
+                            <br>
+                            <span class="azul">&#60;body&#62;</span>
+                            <br>
+                            <span class="dentro-fun">
+                                <span class="azul">&#60;h1&#62;</span>Hola {{ nombre }}<span
+                                    class="azul">&#60;/h1&#62;</span>
+                            </span>
+                            <br>
+                            <span class="azul">&#60;/body&#62;</span>
+                            <br>
+                            <span class="azul">&#60;/html&#62;</span>
+                        </code>
+                        <img class="img3" src="../src/img/jijan-nombre.png" alt="Ejemplo jijan-nombre">
+                        <br>
+
+                        <h3>Uso de estructura de control</h3>
+                        <p>Pero utilizando este motor nos deja hacer algunos estructuras de control como lo son el
+                            <span class="azul">for</span>,
+                            pero primero vamos cambiar nuestra metodo para que mande una lista: </p>
+                        <!-- codigo 2 python -->
+                        <code class="carta-code-flask">
+                            <div class="posicion-flex-right">
+                                <div class="barra-lenguaje">
+                                    <span>python</span>
+                                </div>
+                            </div>
+                            <span class="azul">def </span><span class="verde">index</span>
+                            <span class="amarrillo">()</span>:
+                            <br>
+                            <span class="dentro-fun">
+                                <span class="comentario"># lista con valores al azar</span>
+                            </span>
+                            <br>
+                            <span class="dentro-fun">
+                                lista = [<span class="morado">"dato 1"</span>,<span class="morado">"dato 2"</span>,<span
+                                    class="morado">"dato 3"</span>]
+                            </span>
+                            <br>
+                            <span class="dentro-fun">
+                                <span class="rojo-claro">return </span>render_template(<span
+                                    class="amarrillo">"index.html"</span>,lista = lista)
+                            </span>
+                        </code>
+                        <p>El codigo html quedaria de la siguiente manera</p>
+                        <!-- codigo html 2 -->
+                        <code class="carta-code-flask">
+                            <div class="posicion-flex-right">
+                                <div class="barra-lenguaje">
+                                    <span>HTML</span>
+                                </div>
+                            </div>
+                            <span class="cafe">&#60;!DOCTYPE html&#62;</span>
+                            <br>
+                            <span><span class="azul">&#60;html </span><span class="verde">lang=</span><span
+                                    class="morado">"en"</span>&#62;</span>
+                            <br>
+                            <span class="azul">&#60;head&#62;</span>
+                            <br>
+                            <span class="dentro-fun">
+                                <span><span class="azul">&#60;meta </span><span class="verde">charset=</span><span
+                                        class="morado">"UTF-8"</span>&#62;</span>
+                            </span>
+                            <br>
+                            <span class="dentro-fun">
+                                <span>
+                                    <span class="azul">&#60;meta </span><span class="verde">name=</span><span
+                                        class="morado">"viewport"</span><span class="verde">contet=</span><span
+                                        class="morado">"width=device-width, initial-scale=1.0"</span>&#62;
+                                </span>
+                            </span>
+                            <br>
+                            <span class="dentro-fun">
+                                <span class="azul">&#60;title&#62;</span>Index<span class="azul">&#60;/title&#62;</span>
+                            </span>
+                            <br>
+                            <span class="azul">&#60;/head&#62;</span>
+                            <br>
+                            <span class="azul">&#60;body&#62;</span>
+                            <br>
+                            <span class="dentro-fun">
+                                <span class="azul">&#60;h1&#62;</span>Mi lista<span class="azul">&#60;/h1&#62;</span>
+                            </span>
+                            <br>
+                            <span class="dentro-fun">
+                                {% for valore in lista %}
+                            </span>
+                            <br>
+                            <span class="dentro-fun">
+                                <span class="comentario">&#60;!-- abrir con % y escribimos nuestro for --&#62;</span>
+                            </span>
+                            <br>
+                            <span class="dentro-fun">
+                                <span class="azul">&#60;p&#62;</span>{{ valor }}<span class="azul">&#60;/p&#62;</span>
+                            </span>
+                            <br>
+                            <span class="dentro-fun">
+                                <span class="comentario">&#60;!-- al cerrar necesitamos poner la palabra 'end' seguido
+                                    de la primera palabra que comenzo --&#62;</span>
+                            </span>
+                            <br>
+                            <span class="dentro-fun">
+                                {% endfor %}
+                            </span>
+                            <br>
+                            <span class="azul">&#60;/body&#62;</span>
+                            <br>
+                            <span class="azul">&#60;/html&#62;</span>
+                        </code>
+                        <p>y el resultado seria algo de esta manera</p>
+                        <img src="../src/img/jinja-for.png" alt="for utilizando jinja">
+                    </div>
+                </div>
+                <!-- motores de plantillas -->
+                <div id="cinco" class="collapse" data-parent="#accordionpadre">
+                    <div class="temas">
+                        <h2>Motor de plantilla</h2>
                     </div>
                 </div>
             </div>
@@ -236,16 +564,18 @@
             <nav class="navegacion-footer">
                 <a class="pl-3" href="https://github.com/Luis-Blash" alt="git hub"><i class="fab fa-github-alt"></i></a>
                 <a class="pl-3" href="https://www.youtube.com/channel/UCoEIYAsPco1b1AKyDDVi3fg" alt="twitter"><i
-                        class="fab fa-youtube"></i> </a>
+                        class="fab fa-youtube"></i>
+                </a>
                 <a class="pl-3" href="https://twitter.com/blashtree"><i class="fab fa-twitter"></i></a>
             </nav>
             <!-- navegacion menu -->
             <nav class="navegacion-footer pt-3">
                 <a href="../index.html" class="pl-4"> Inicio</a>
                 <a href="flask.html" class="pl-4"> Flask </a>
-                <a href="https://www.youtube.com/channel/UCoEIYAsPco1b1AKyDDVi3fg" class="pl-4"> Sobre nosotros </a>
+                <a href="https://www.youtube.com/channel/UCoEIYAsPco1b1AKyDDVi3fg" class="pl-4">
+                    Sobre nosotros
+                </a>
             </nav>
-
         </div>
         <div class="yo">
             <span>Pagina Creada por Luis Enrique Ocampo Gonzalez</span>
