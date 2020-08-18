@@ -41,15 +41,21 @@
         <div class="info-flex accordion" id="accordionpadre">
             <div class="menu-flask">
                 <a role="button" href="#" data-toggle="collapse" data-target="#uno" aria-expanded="true"
-                    aria-controls="uno">Estructura de flask</a>
+                    aria-controls="uno">Virtual ENV</a>
                 <a role="button" href="#" data-toggle="collapse" data-target="#dos" aria-expanded="true"
-                    aria-controls="dos">Rutas</a>
+                    aria-controls="dos">Correr proyecto</a>
                 <a role="button" href="#" data-toggle="collapse" data-target="#tres" aria-expanded="true"
-                    aria-controls="tres">Templates</a>
+                    aria-controls="tres">Estructura de flask</a>
                 <a role="button" href="#" data-toggle="collapse" data-target="#cuatro" aria-expanded="true"
-                    aria-controls="cuatro">Motor de vistas (Jinja)</a>
+                    aria-controls="cuatro">Rutas</a>
                 <a role="button" href="#" data-toggle="collapse" data-target="#cinco" aria-expanded="true"
-                    aria-controls="cinco">Motor de plantilla</a>
+                    aria-controls="cinco">Templates</a>
+                <a role="button" href="#" data-toggle="collapse" data-target="#seis" aria-expanded="true"
+                    aria-controls="seis">Motor de vistas (Jinja)</a>
+                <a role="button" href="#" data-toggle="collapse" data-target="#siete" aria-expanded="true"
+                    aria-controls="siete">Motor de plantilla</a>
+                <a role="button" href="#" data-toggle="collapse" data-target="#ocho" aria-expanded="true"
+                    aria-controls="ocho">Funciones Redirect y Url_for</a>
             </div>
             <div class="info">
                 <!-- Inicio -->
@@ -59,12 +65,87 @@
                         <h2>Escoge un tema para ir aprendiendo</h2>
                         <p>
                             Los temas van de forma secuencial o si tienes duda, simple
-                            presiona uno para empezar a ver los ejemplos
+                            presiona para empezar a ver los ejemplos
                         </p>
                     </div>
                 </div>
-                <!-- Tema Estructura -->
+                <!-- Virtual Env -->
                 <div id="uno" class="collapse" data-parent="#accordionpadre">
+                    <div class="temas">
+                        <h2>Virtualenv</h2>
+                        <p>
+                            Cuando trabajas con Flask es muy recomendable utilizar virtualenv, el cual es una
+                            herramineta
+                            para crear entornos de python aislados en este caso al trabajar con python puede que cada
+                            uno de tus proyectos tenga diferentes instalados, utilizando virtualenv evitaras conflictos
+                            despues
+                        </p>
+                        <p>
+                            Primero vamos instalar virtualenv, utilizando pip el gestor de paquetes de python, utiliando
+                            <span>pip install virtualenv</span>
+                        </p>
+                        <img class="img3" src="../src/img/virtualenv.png" alt="pip install virtualenv">
+                        <h3>Utilizando virtual env</h3>
+                        <ul class="pasos">
+                            <li>
+                                <p>Crear la capeta donde estara nuestro proyecto</p>
+
+                                <img class="img3" src="../src/img/carpeta-env.png" alt="carpeta virtual env">
+                            </li>
+                            <li>
+
+                                <p>Crear el entorno virtual dentro de nuestra carpeta con el comando <span>virtualenv
+                                        venv</span> (En este ejemplo se llama venv)</p>
+                                <img class="img3" src="../src/img/carpeta-virtual-env.png" alt="carpeta venv">
+                            </li>
+                            <li>
+                                <p>
+                                    Para entrar dentro de nuestro entorno virtual, una de las formas es <span>source
+                                        bin/activate</span> estando dentro nuestra carpeta venv
+                                    previamente creada y para ver que ha funcionado al lado de tu nombre de usuario
+                                    aparecera entre parentesis el nombre de la carpeta
+                                </p>
+                                <img class="img3" src="../src/img/source-activate.png" alt="source de virtualenv">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Correr proyecto -->
+                <div id="dos" class="collapse" data-parent="#accordionpadre">
+                    <div class="temas">
+                        <h2>Correr nuestro proyecto Flask</h2>
+                        <p>
+                            Para poder empezar a utilizar este microframework flask, solo tenemos que hacer lo siguiente
+                        </p>
+                        <ul class="pasos">
+                            <li>
+                                <p>A la misma altura que nuestro carpeta "venv" creamos uns carpeta donde estaran
+                                    nuestros trabajos (src)</p>
+                            </li>
+                            <li>
+                                <p>Dentro de ella creamos el archivo para trabajar</p>
+                            <li>
+                                <p>Instalamos flask <span>pip install flask</span></p>
+                            </li>
+                            <li>
+                                <p>
+                                    Por ultimo solo tenemos que darle <span>python app.py</span> (app.py es el nombre de
+                                    nuestro archivo)
+                                </p>
+                                <img class="img3" src="../src/img/correr-proyecto.png" alt="correr proyecto">
+                            </li>
+                            <li>
+                                <p>
+                                    Por defecto el puero que se activa es 5000, en el navegador solo damos
+                                    <span>localhost:5000</span>
+                                </p>
+                                <img class="img3" src="../src/img/hello-world.png" alt="hello world">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Estructura de flask -->
+                <div id="tres" class="collapse" data-parent="#accordionpadre">
                     <div class="temas">
                         <h2>Estructura de flask</h2>
                         <p>
@@ -80,7 +161,7 @@
                     </div>
                 </div>
                 <!-- Temas Rutas -->
-                <div id="dos" class="collapse" data-parent="#accordionpadre">
+                <div id="cuatro" class="collapse" data-parent="#accordionpadre">
                     <div class="temas">
                         <h2>Rutas</h2>
                         <p>
@@ -242,7 +323,7 @@
                     </div>
                 </div>
                 <!-- tema Templates -->
-                <div id="tres" class="collapse" data-parent="#accordionpadre">
+                <div id="cinco" class="collapse" data-parent="#accordionpadre">
                     <div class="temas">
                         <h2>Templates</h2>
                         <p>
@@ -348,7 +429,7 @@
                     </div>
                 </div>
                 <!-- motores de vistas -->
-                <div id="cuatro" class="collapse" data-parent="#accordionpadre">
+                <div id="seis" class="collapse" data-parent="#accordionpadre">
                     <div class="temas">
                         <h2>Motor de vistas (Jinja)</h2>
                         <p>
@@ -547,9 +628,141 @@
                     </div>
                 </div>
                 <!-- motores de plantillas -->
-                <div id="cinco" class="collapse" data-parent="#accordionpadre">
+                <div id="siete" class="collapse" data-parent="#accordionpadre">
                     <div class="temas">
                         <h2>Motor de plantilla</h2>
+                        <p>Los motores de plantillas de una manera sencilla nos permiten poder reutilizar nuestro codigo
+                            <span class="cafe">HTML</span> que al mismo tiempo nos deja hacer bucles y condicionales
+                        </p>
+                        <p>
+                            Un ejemplo seria hacer un nuevo archivo en nuestra carpeta <span
+                                class="cafe">Templates</span> y llamarlo <span class="cafe">base.html</span> el cual
+                            tendra el siguiente codigo
+                        </p>
+                        <!-- codigo html 1 -->
+                        <code class="carta-code-flask">
+                            <div class="posicion-flex-right">
+                                <div class="barra-lenguaje">
+                                    <span>HTML</span>
+                                </div>
+                            </div>
+                            <span class="cafe">&#60;!DOCTYPE html&#62;</span>
+                            <br>
+                            <span><span class="azul">&#60;html </span><span class="verde">lang=</span><span
+                                    class="morado">"en"</span>&#62;</span>
+                            <br>
+                            <span class="azul">&#60;head&#62;</span>
+                            <br>
+                            <span class="dentro-fun">
+                                <span><span class="azul">&#60;meta </span><span class="verde">charset=</span><span
+                                        class="morado">"UTF-8"</span>&#62;</span>
+                            </span>
+                            <br>
+                            <span class="dentro-fun">
+                                <span>
+                                    <span class="azul">&#60;meta </span><span class="verde">name=</span><span
+                                        class="morado">"viewport"</span><span class="verde">contet=</span><span
+                                        class="morado">"width=device-width, initial-scale=1.0"</span>&#62;
+                                </span>
+                            </span>
+                            <br>
+                            <span class="dentro-fun">
+                                <span class="azul">&#60;title&#62;</span>{% block title %}{% endblock %}<span
+                                    class="azul">&#60;/title&#62;</span>
+                            </span>
+                            <br>
+                            <span class="azul">&#60;/head&#62;</span>
+                            <br>
+                            <span class="azul">&#60;body&#62;</span>
+                            <br>
+                            <span class="dentro-fun">
+                                {% block content %}
+                            </span>
+                            <br>
+                            <span class="dentro-fun">
+                                {% endblock %}
+                            </span>
+                            <br>
+                            <span class="azul">&#60;/body&#62;</span>
+                            <br>
+                            <span class="azul">&#60;/html&#62;</span>
+                        </code>
+                        <p>
+                            Para utilizar el motor de plantilla que tiene flask, con tan solo poner {% %}, indicamos que
+                            podemos hacer bloques y para usarlos necesitamos abrir {% block content %} y cerralo con la
+                            palabra <span class="rojo-claro">end</span> y la primera letra con la que comenzo
+                            {% endblock %}
+                        </p>
+                        <p>
+                            Ahora vamos a crear otro archivo llamado <span class="cafe">index.html</span>, el cual va
+                            heredar todo lo que tiene <span class="cafe">base.html</span>
+                        </p>
+                        <!-- index.html -->
+                        <code class="carta-code-flask">
+                            <div class="posicion-flex-right">
+                                <div class="barra-lenguaje">
+                                    <span>HTML</span>
+                                </div>
+                            </div>
+                            {% extends "base.html" %}
+                            <br>
+                            {% block title %}
+                            <br>
+                            Index
+                            <br>
+                            {% endblock %}
+                            <br>
+                            {% block content %}
+                            <br>
+                            <span class="azul">&#60;h1&#62;</span>{{ titulo }}<span class="azul">&#60;/h1&#62;</span>
+                            <br>
+                            {% endblock %}
+                        </code>
+                        <p>
+                            El codigo es mas sencillo dado que le decimos que extienda de <span
+                                class="cafe">base.html</span> y llamando los bloques escribimos lo que queramos, de esa
+                            forma ya no tenemos que escirbir en cada una de nuestros html el mismo codigo como lo es
+                            header y el footer
+                        </p>
+                        <p>
+                            y jinja tambien nos permite pasar variables desde nuestras rutas, con tan solo poner {{}},
+                            indicas que es la variable
+                        </p>
+                        <p>
+                            Para mostrar esto, simplemente hacemos una ruta como esta en nuestro archivo <span
+                                class="amarrillo">app.py</span>
+                        </p>
+                        <code class="carta-code-flask">
+                            <div class="posicion-flex-right">
+                                <div class="barra-lenguaje">
+                                    <span>python</span>
+                                </div>
+                            </div>
+                            <span><span class="verde">@app.route</span><span class="amarrillo">("/")</span></span>
+                            <br>
+                            <span><span class="azul">def </span><span class="verde">index</span>
+                                <span class="amarrillo">()</span>:</span>
+                            <br>
+                            <span class="dentro-fun">
+                                <span class="comentario"># variable</span>
+                            </span>
+                            <br>
+                            <span class="dentro-fun">
+                                titulo = <span class="morado">"Mi titulo variable"</span>
+                            </span>
+                            <br>
+                            <span class="dentro-fun">
+                                <span class="rojo-claro">return </span>render_template(
+                                <span class="amarrillo">"index.html"</span>,titulo = titulo)
+                            </span>
+                            <br>
+                        </code>
+                        <img class="img3" src="../src/img/motor-plantillas1.png" alt="Motor de plantilla ejemplo">
+                    </div>
+                </div>
+                <div id="ocho" class="collapse" data-parent="#accordionpadre">
+                    <div class="temas">
+                        <h2>Funciones Redirect y Url_for</h2>
                     </div>
                 </div>
             </div>

@@ -334,6 +334,30 @@ p {
     color: #0e0d0d;
 }
 
+.pasos li{
+    list-style-type: upper-roman;
+}
+
+.pasos li p{
+    margin: 0;
+    line-height: 30px;
+}
+
+.pasos li p span{
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 0 5px;
+    background-color: #313130;
+    color: white;
+}
+
+.pasos li img{
+    margin: 0;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+
 /*  COLORES ++++++++++++++++++++++++++++++++  */
 .comentario {
     color: #949494;
@@ -366,9 +390,6 @@ p {
 .naranja {
     color: #ca6500;
 }
-
-/*  degradados  */
-.color-DA {}
 
 /*  media query despues de 800px computadora ===============*/
 /*  header  */
