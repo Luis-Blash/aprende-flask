@@ -265,7 +265,6 @@ p {
 
 /*  ========================  flask pagina ================  */
 .info-flex {
-    height: 625px;
     width: 95%;
     padding: 10px;
     display: flex;
@@ -281,15 +280,23 @@ p {
     background-color: #2c3e50;
     width: 95%;
     padding: 10px;
+    line-height: 30px;
+    padding: 15px;
 }
 
 .menu-flask a {
     margin: 0 5px;
+    transition: all 400ms ease ;
+}
+
+.menu-flask a:hover{
+    color: #4484e4;
+    font-size: 1.3em;
 }
 
 .info {
-    width: 95%;
-    height: 500px;
+    width: 85%;
+    height: 450px;
     /*  para que se active el scroll  */
     overflow: auto;
 }
@@ -472,7 +479,7 @@ p {
     }
 
     .menu-flask {
-        width: 18%;
+        width: 25%;
         display: flex;
         flex-flow: column wrap;
         align-items: center;

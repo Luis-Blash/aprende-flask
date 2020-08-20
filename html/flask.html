@@ -56,6 +56,8 @@
                     aria-controls="siete">Motor de plantilla</a>
                 <a role="button" href="#" data-toggle="collapse" data-target="#ocho" aria-expanded="true"
                     aria-controls="ocho">Funciones Redirect y Url_for</a>
+                <a role="button" href="#" data-toggle="collapse" data-target="#nueve" aria-expanded="true"
+                    aria-controls="nueve">Conexion de Base de datos</a>
             </div>
             <div class="info">
                 <!-- Inicio -->
@@ -534,7 +536,7 @@
                         <p>Pero utilizando este motor nos deja hacer algunos estructuras de control como lo son el
                             <span class="azul">for</span>,
                             pero primero vamos cambiar nuestra metodo para que mande una lista: </p>
-                        <!-- codigo 2 python -->
+                        <!-- codigo python -->
                         <code class="carta-code-flask">
                             <div class="posicion-flex-right">
                                 <div class="barra-lenguaje">
@@ -760,9 +762,144 @@
                         <img class="img3" src="../src/img/motor-plantillas1.png" alt="Motor de plantilla ejemplo">
                     </div>
                 </div>
+                <!-- Funciones Redirect y Url_for -->
                 <div id="ocho" class="collapse" data-parent="#accordionpadre">
                     <div class="temas">
                         <h2>Funciones Redirect y Url_for</h2>
+                        <p>
+                            La diferencia entre Redirect y Url_for, Redirect: Direciona a un link y Url_for: nos muestra
+                            el url
+                        </p>
+                        <p>
+                            Un ejemplo sencillo para demostrarlo seria haciendo un archivo <span class="amarrillo">
+                                app.py </span>y poner lo siguiente
+                        </p>
+                        <!-- codigo python -->
+                        <code class="carta-code-flask">
+                            <div class="posicion-flex-right">
+                                <div class="barra-lenguaje">
+                                    <span>python</span>
+                                </div>
+                            </div>
+                            <span class="comentario"># Aqui importamos de Flak, Redirect y Url_for </span>
+                            <br>
+                            <span class="rojo-claro">from</span> flask
+                            <span class="rojo-claro">import</span> Flask, redirect, url_for
+                            <br>
+                            <span>app<span class="rojo-claro"> = </span>Flask<span
+                                    class="amarrillo">(</span>__name__<span class="amarrillo">)</span></span>
+                            <br>
+                            <span class="verde">@app.route</span><span class="amarrillo">("/index")</span>
+                            <br>
+                            <span class="azul">def </span><span class="verde">index</span>
+                            <span class="amarrillo">()</span>:
+                            <br>
+                            <span class="dentro-fun">
+                                <span class="rojo-claro">return</span><span class="amarrillo"> "Hola mundo"</span>
+                            </span>
+                            <br>
+                            <span class="comentario"># Aqui iran las siguientes rutas </span>
+                            <br>
+                            <br>
+                            <span class="rojo-claro">if </span> __name__<span class="rojo-claro">
+                                == </span><span class="amarrillo">"__main__"</span> :
+                            <br>
+                            <span class="dentro-fun">
+                                app.run<span class="amarrillo">(</span>debug
+                                <span class="rojo-claro">=</span><span class="morado"> True</span>
+                                <span class="amarrillo">)</span>
+                            </span>
+                        </code>
+                        <p>
+                            Ahora vamos a crear la ruta Url para demostrar que lo que hace la funcion url_for es mostrar
+                            la url de un texto
+                        </p>
+                        <!-- ruta -->
+                        <code class="carta-code-flask">
+                            <div class="posicion-flex-right">
+                                <div class="barra-lenguaje">
+                                    <span>python</span>
+                                </div>
+                            </div>
+                            <span class="verde">@app.route</span><span class="amarrillo">("/url")</span>
+                            <br>
+                            <span class="azul">def </span><span class="verde">url</span><span
+                                class="amarrillo">()</span>:
+                            <br>
+                            <span class="dentro-fun">
+                                <span class="rojo-claro">return</span> url_for(<span class="amarrillo">"index"</span>,
+                                <span class="verde">next=</span><span class="amarrillo">"texto"</span>)
+                            </span>
+                        </code>
+                        <img class="img3" src="../src/img/Url_for.png" alt="Url_for">
+                        <p>
+                            Ahora hacemos una ruta redirect, nos va direcionar a google
+                        </p>
+                        <!-- redirect -->
+                        <code class="carta-code-flask">
+                            <div class="posicion-flex-right">
+                                <div class="barra-lenguaje">
+                                    <span>python</span>
+                                </div>
+                            </div>
+                            <span class="verde">@app.route</span><span class="amarrillo">("/google")</span>
+                            <br>
+                            <span class="azul">def </span><span class="verde">go_to_google</span><span
+                                class="amarrillo">()</span>:
+                            <br>
+                            <span class="dentro-fun">
+                                <span class="rojo-claro">return</span> redirect(<span
+                                    class="amarrillo">"https://google.com"</span>)
+                            </span>
+                        </code>
+                        <img class="img3" src="../src/img/redirect.png" alt="redirect">
+                        <p>
+                            Podemos hacer una combinacion de las dos, el cual funciona redicionando el url que recibe
+                            del metodo numero y le pasamos tambien el dato el cual es el id y lo hara
+                        </p>
+                        <!-- redirect -->
+                        <code class="carta-code-flask">
+                            <div class="posicion-flex-right">
+                                <div class="barra-lenguaje">
+                                    <span>python</span>
+                                </div>
+                            </div>
+                            <span class="verde">@app.route</span><span
+                                class="amarrillo">("/numero/&#60;int:id&#62;")</span>
+                            <br>
+                            <span class="azul">def </span><span class="verde">numero</span><span
+                                class="amarrillo">(id)</span>:
+                            <br>
+                            <span class="dentro-fun">
+                                <span class="rojo-claro">return f</span><span class="amarrillo">"El numero es:
+                                </span>{id}<span class="amarrillo">"</span>
+                            </span>
+                            <br>
+                            <br>
+                            <span class="verde">@app.route</span><span class="amarrillo">("/redi")</span>
+                            <br>
+                            <span class="azul">def </span><span class="verde">redi</span><span
+                                class="amarrillo">()</span>:
+                            <br>
+                            <span class="dentro-fun">
+                                <span class="comentario"># Redireciona el url de numero con el id que recibe y opcional
+                                    next</span>
+                            </span>
+                            <br>
+                            <span class="dentro-fun">
+                                <span class="rojo-claro">return </span>redirect(url_for(<span
+                                    class="amarrillo">"numero"</span>,<span class="rojo-claro">id=</span><span
+                                    class="morado">50</span>,<span class="rojo-claro">next=</span><span
+                                    class="morado">"luis"</span>)
+                            </span>
+                        </code>
+                        <img class="img3" src="../src/img/redirect_Url_for.png" alt="combinacion">
+                    </div>
+                </div>
+                <!-- Conexion a base de datos -->
+                <div id="nueve" class="collapse" data-parent="#accordionpadre">
+                    <div class="temas">
+                        <h2>Conexion de base de datos</h2>
                     </div>
                 </div>
             </div>
