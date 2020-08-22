@@ -29,7 +29,7 @@
             <nav class="m-3 navegacion-header">
                 <a href="../index.html" class="pl-4"> Inicio </a>
                 <a href="flask.html" class="pl-4"> Flask </a>
-                <a href="https://www.youtube.com/channel/UCoEIYAsPco1b1AKyDDVi3fg" class="pl-4">
+                <a href="about.html" class="pl-4">
                     Sobre nosotros
                 </a>
             </nav>
@@ -58,6 +58,8 @@
                     aria-controls="ocho">Funciones Redirect y Url_for</a>
                 <a role="button" href="#" data-toggle="collapse" data-target="#nueve" aria-expanded="true"
                     aria-controls="nueve">Conexion de Base de datos</a>
+                <a role="button" href="#" data-toggle="collapse" data-target="#diez" aria-expanded="true"
+                    aria-controls="diez">Rutas base de datos</a>
             </div>
             <div class="info">
                 <!-- Inicio -->
@@ -900,6 +902,406 @@
                 <div id="nueve" class="collapse" data-parent="#accordionpadre">
                     <div class="temas">
                         <h2>Conexion de base de datos</h2>
+                        <p>
+                            Para la conexion a una base de datos podemos usar para practicar <span
+                                class="azul">SQLITE</span>, el cual es una pequeña base de datos que regularmente se usa
+                            para moviles</p>
+                        <p>
+                            Primero antes de empezar necesitamos instalar flask_sqlalchemy, con <span
+                                class="amarrillo">pip install flask_sqlalchemy</span> y despues hacer nuestra <span
+                                class="amarrillo">app.py</span>
+                        </p>
+                        <code class="carta-code-flask">
+                            <div class="posicion-flex-right">
+                                <div class="barra-lenguaje">
+                                    <span>python</span>
+                                </div>
+                            </div>
+                            <!-- importaciones  -->
+                            <span class="rojo-claro">from</span> flask
+                            <span class="rojo-claro">import</span> Flask, render_template, request
+                            <br>
+                            <span class="rojo-claro">from</span> flask_sqlalchemy
+                            <span class="rojo-claro">import</span> SQLAlchemy
+                            <br>
+                            <span class="rojo-claro">from</span> werkzeug.security
+                            <span class="rojo-claro">import</span> generate_password_hash, check_password_hash
+                            <br>
+                            <span class="rojo-claro">import </span> os
+                            <br>
+                            <!-- base direcion  -->
+                            <span class="# creamos la direcion de la base de datos"></span>
+                            <br>
+                            dbdir = <span class="morado">"sqlite:///"</span> + os.path.abspath(os.getcwd()) + <span
+                                class="morado">"/database.db"</span>
+                            <br>
+                            <span>app<span class="rojo-claro"> = </span>Flask<span
+                                    class="amarrillo">(</span>__name__<span class="amarrillo">)</span></span>
+                            <br>
+                            app.config<span class="amarrillo">[</span><span
+                                class="morado">"SQLALCHEMY_DATABASE_URI"</span><span class="amarrillo">]</span> =
+                            dbdir
+                            <br>
+                            app.config<span class="amarrillo">[</span><span
+                                class="morado">"SQLALCHEMY_TRACK_MODIFICATIONS"</span><span class="amarrillo">]</span> =
+                            <span class="azul">False</span>
+                            <br>
+                            db = SQLAlchemy<span class="amarrillo">(</span>app<span class="amarrillo">)</span>
+                            <br>
+                            <br>
+                            <!-- modelo  -->
+                            <span class="rojo-claro">class </span> <span class="azul">User</span><span
+                                class="amarrillo">(</span>db.Model<span class="amarrillo">)</span>:
+                            <br>
+                            <span class="dentro-fun">
+                                id = db.Column<span class="amarrillo">(</span>db.Integer, primary_key=True<span
+                                    class="amarrillo">)</span>
+                            </span>
+                            <br>
+                            <span class="dentro-fun">
+                                username = db.Column<span class="amarrillo">(</span>db.String(50), unique=True,
+                                nullable=False<span class="amarrillo">)</span>
+                            </span>
+                            <br>
+                            <span class="dentro-fun">
+                                password = db.Column<span class="amarrillo">(</span>db.String(80), nullable=False<span
+                                    class="amarrillo">)</span>
+                            </span>
+                            <br>
+                            <span class="comentario"># las rutas iran aqui</span>
+                            <br>
+                            <!-- correr flask  -->
+                            <span class="rojo-claro">if </span> __name__<span class="rojo-claro">
+                                == </span><span class="amarrillo">"__main__"</span> :
+                            <br>
+                            <span class="dentro-fun">
+                                app.run<span class="amarrillo">(</span>debug
+                                <span class="rojo-claro">=</span><span class="morado"> True</span>
+                                <span class="amarrillo">)</span>
+                            </span>
+                        </code>
+                        <p>
+                            Las importaciones como <span class="rojo-claro">SQLAlchemy</span> nos ayuda a manajar de
+                            manera mas facil nuestra base de
+                            datos, <span class="rojo-claro">werkzeug.security</span> un modulo que nos ayuda para poder
+                            cifrar y <span class="rojo-claro">os</span> ayuda a encontrar
+                            la ruta absoluta de un archivo
+                        </p>
+                        <p>
+                            La clase de User, se encargara de crear una tabla en nuestra base de datos que tenra un id,
+                            username y password, el cual tendra caracteristicas como si hicieramos una tabla con SQL
+                        </p>
+
+                        <hr>
+                        <h3>Creacion de HTML para comunicarme con mi base</h3>
+
+                        <p>Primero hagamos el html que vamos a utilizar de manera simple, comenzaremos con <span
+                                class="cafe">index.html</span></p>
+                        <!-- HTML index  -->
+                        <code class="carta-code-flask">
+                            <div class="posicion-flex-right">
+                                <div class="barra-lenguaje">
+                                    <span>HTML</span>
+                                </div>
+                            </div>
+                            <span class="azul">&#60;h1&#62;</span>Welcome!<span class="azul">&#60;/h1&#62;</span>
+                            <br>
+                            <span class="azul">&#60;form</span> <span class="verde">method=</span><span
+                                class="morado">"get"</span> <span class="verde">action=</span><span
+                                class="morado">"{{ url_for('search') }}"</span><span class="azul">/&#62;</span>
+                            <br>
+                            <span class="azul">&#60;input</span> <span class="verde">type=</span><span
+                                class="morado">"text"</span> <span class="verde">name=</span><span
+                                class="morado">"nickname"</span><span class="azul">&#62;</span>
+                            <br>
+                            <span class="azul">&#60;input</span> <span class="verde">type=</span><span
+                                class="morado">"submit"</span> <span class="verde">value=</span><span
+                                class="morado">"Search"</span><span class="azul">&#62;</span>
+                            <br>
+                            <span class="azul">&#60;/form&#62;</span>
+                        </code>
+                        <p>
+                            Ahora haremos <span class="cafe">singup.html</span> y <span class="cafe">login.html</span>
+                        </p>
+                        <!-- sing up htmml  -->
+                        <code class="carta-code-flask">
+                            <div class="posicion-flex-right">
+                                <div class="barra-lenguaje">
+                                    <span>HTML</span>
+                                </div>
+                            </div>
+                            <span class="azul">&#60;h1&#62;</span>Sing Up<span class="azul">&#60;/h1&#62;</span>
+                            <br>
+                            <!-- form post  -->
+                            <span class="azul">&#60;form</span> <span class="verde">method=</span><span
+                                class="morado">"post"</span> <span class="verde">action=</span><span
+                                class="morado">"{{ url_for('signup') }}"</span><span class="azul">/&#62;</span>
+                            <br>
+                            <!-- input username  -->
+                            <span class="azul">&#60;p&#62;</span>
+                            <span class="azul">&#60;input</span> <span class="verde">type=</span><span
+                                class="morado">"text"</span> <span class="verde">name=</span><span
+                                class="morado">"username"</span><span class="azul">&#62;</span>
+                            <span class="azul">&#60;/p&#62;</span>
+                            <br>
+                            <!-- input contraseña  -->
+                            <span class="azul">&#60;p&#62;</span>
+                            <span class="azul">&#60;input</span> <span class="verde">type=</span><span
+                                class="morado">"password"</span> <span class="verde">name=</span><span
+                                class="morado">"password"</span><span class="azul">&#62;</span>
+                            <span class="azul">&#60;/p&#62;</span>
+                            <br>
+                            <span class="azul">&#60;input</span> <span class="verde">type=</span><span
+                                class="morado">"submit"</span> <span class="verde">value=</span><span
+                                class="morado">"Sing up"</span><span class="azul">&#62;</span>
+                            <br>
+                            <span class="azul">&#60;/form&#62;</span>
+                        </code>
+                        <p></p>
+                        <!-- login htmml  -->
+                        <code class="carta-code-flask">
+                            <div class="posicion-flex-right">
+                                <div class="barra-lenguaje">
+                                    <span>HTML</span>
+                                </div>
+                            </div>
+                            <span class="azul">&#60;h1&#62;</span>Login<span class="azul">&#60;/h1&#62;</span>
+                            <br>
+                            <!-- form post  -->
+                            <span class="azul">&#60;form</span> <span class="verde">method=</span><span
+                                class="morado">"post"</span> <span class="verde">action=</span><span
+                                class="morado">"{{ url_for('login') }}"</span><span class="azul">/&#62;</span>
+                            <br>
+                            <!-- input username  -->
+                            <span class="azul">&#60;p&#62;</span>
+                            <span class="azul">&#60;input</span> <span class="verde">type=</span><span
+                                class="morado">"text"</span> <span class="verde">name=</span><span
+                                class="morado">"username"</span><span class="azul">&#62;</span>
+                            <span class="azul">&#60;/p&#62;</span>
+                            <br>
+                            <!-- input contraseña  -->
+                            <span class="azul">&#60;p&#62;</span>
+                            <span class="azul">&#60;input</span> <span class="verde">type=</span><span
+                                class="morado">"password"</span> <span class="verde">name=</span><span
+                                class="morado">"password"</span><span class="azul">&#62;</span>
+                            <span class="azul">&#60;/p&#62;</span>
+                            <br>
+                            <span class="azul">&#60;input</span> <span class="verde">type=</span><span
+                                class="morado">"submit"</span> <span class="verde">value=</span><span
+                                class="morado">"Log In"</span><span class="azul">&#62;</span>
+                            <br>
+                            <span class="azul">&#60;/form&#62;</span>
+                        </code>
+                        <p>
+                            Ahora hagamos las rutas de nuestro programa utilizando los metodos, presiona el siguinete
+                            boton
+                        </p>
+                        <a role="button" href="#" data-toggle="collapse" data-target="#diez" aria-expanded="true"
+                            aria-controls="diez">Rutas base de datos</a>
+                    </div>
+                </div>
+                <!-- Rutas de base de datos  -->
+                <div id="diez" class="collapse" data-parent="#accordionpadre">
+                    <div class="temas">
+                        <h2>Rutas de base de datos</h2>
+                        <p>
+                            Siguiendo con el anterior tema el cual fue la creacion de base de datos, ahora haremos las
+                            rutas, que se comunicaran con nuestra base de datos
+                        </p>
+                        <!-- primero codigo -->
+                        <code class="carta-code-flask">
+                            <div class="posicion-flex-right">
+                                <div class="barra-lenguaje">
+                                    <span>python</span>
+                                </div>
+                            </div>
+                            <span class="verde">@app.route</span><span class="amarrillo">("/")</span>
+                            <br>
+                            <span><span class="azul">def </span><span class="verde">index</span>
+                                <span class="amarrillo">()</span>:</span>
+                            <br>
+                            <span class="dentro-fun">
+                                <span class="rojo-claro">return </span>render_template(<span
+                                    class="amarrillo">"index.html"</span>)
+                            </span>
+                            <br>
+                        </code>
+                        <img class="img3" src="../src/img/index-db.png" alt="index db">
+                        <h3>Ruta search</h3>
+                        <p>Ahora vamos a crear la ruta la cual se encargara de buscar, en la base de datos si existe o
+                            no le usuario</p>
+                        <!-- search codigo -->
+                        <code class="carta-code-flask">
+                            <div class="posicion-flex-right">
+                                <div class="barra-lenguaje">
+                                    <span>python</span>
+                                </div>
+                            </div>
+                            <span class="verde">@app.route</span><span class="amarrillo">("/search")</span>
+                            <br>
+                            <span class="azul">def </span><span class="verde">search</span>
+                            <span class="amarrillo">()</span>:
+                            <br>
+                            <span class="dentro-fun">
+                                nickname = request.args.get(<span class="morado">"nickname"</span>)
+                            </span>
+                            <br>
+                            <span class="dentro-fun">
+                                user = Users.query.filter_by(<span class="azul">username=</span>nickname).first()
+                            </span>
+                            <br>
+                            <span class="dentro-fun">
+                                <span class="rojo-claro">if </span>user:
+                                <br>
+                                <span class="dentro-fun2">
+                                    <span class="rojo-claro">return </span> user.username
+                                </span>
+                            </span>
+                            <br>
+                            <span class="dentro-fun">
+                                <span class="rojo-claro">return </span> <span class="morado">"no existe"</span>
+                            </span>
+                        </code>
+                        <p>
+                            La ruta de <span class="naranja">search</span> consiste en obtener a travez del formulario
+                            de <span class="cafe">index.html</span> que tiene el metodo get manda una <span
+                                class="azul">request </span>(solicitud) para obtener un dato de la base de datos, en
+                            este caso recibimos el nickname que es el nombre de que recibimos del formulario
+                        </p>
+                        <p>
+                            Guardamos esa variable y creamos una variable <span class="azul">user</span>, el cual
+                            utilizando nuestro modelo de la clase <span class="azul">User</span>, hacemos una peticion a
+                            la base de datos que filtre los datos por nombre y nos muestre el primero y guardamos ese
+                            valor
+                        </p>
+                        <p>
+                            si el usuario se encontro nos returna el nombre del usuario, en caso que no existe nos dira
+                            <span class="rojo-claro">"no existe"</span>, y en el url se mostrara
+                        </p>
+                        <img class="img3" src="../src/img/index-db-no.png" alt="db no existe">
+                        <h3>Ruta SingUp</h3>
+                        <p>Creamos la siguiente ruta la cual se encargara de registrar un usuario a la base de datos
+                        </p>
+                        <code class="carta-code-flask">
+                            <div class="posicion-flex-right">
+                                <div class="barra-lenguaje">
+                                    <span>python</span>
+                                </div>
+                            </div>
+                            <span class="verde">@app.route</span><span class="amarrillo">("/signup", <span
+                                    class="azul">methods=</span>["GET","POST"] )</span>
+                            <br>
+                            <span class="azul">def </span><span class="verde">signup</span>
+                            <span class="amarrillo">()</span>:
+                            <br>
+                            <span class="dentro-fun">
+                                <span class="rojo-claro">if </span>request.method == <span class="morado">"POST"</span>:
+                                <br>
+                                <br>
+                                <span class="dentro-fun2">
+                                    hashed_pw = generate_password_hash(request.form[<span
+                                        class="morado">"password"</span>], method="sha256")
+                                </span>
+                                <br>
+                                <br>
+                                <span class="dentro-fun2">
+                                    new_user = Users(username= request.form[<span class="morado">"username"</span>],
+                                    password=hashed_pw)
+                                </span>
+                                <br>
+                                <br>
+                                <span class="dentro-fun2">
+                                    db.session.add(new_user)
+                                </span>
+                                <br>
+                                <br>
+                                <span class="dentro-fun2">
+                                    db.session.commit()
+                                </span>
+                                <br>
+                                <br>
+                                <span class="dentro-fun2">
+                                    <span class="rojo-claro">return </span> <span class="morado">"Fue agregado el
+                                        usuario"</span>
+                                </span>
+                                <br>
+                            </span>
+                            <span class="dentro-fun">
+                                <span class="rojo-claro">return </span> render_template(<span
+                                    class="morado">"signup.html"</span>)
+                            </span>
+                        </code>
+                        <p>
+                            Aunque el codigo sea demasiado grande es facil de explicar, desde el html del formulario de
+                            <span class="cafe">singup.html</span>, manda una solicitud de tipo <span
+                                class="azul">post</span>, el cual envia datos.
+                        </p>
+                        <p>
+                            Por defecto las rutas reciben datos por GET, pero puedes ponerle los dos, entonces una vez
+                            que entras a la ruta <span class="verde">/singup</span> escribiras el usuario y contraseña,
+                            el cual recibe la ruta y cifra la contraseña para guardarla, y al agregarlo a usuario le das
+                            el usuario que recibe del formulario y la contraseña incriptada y eso lo agrega a la base de
+                            datos.
+                        </p>
+                        <img class="img3" src="../src/img/singup-db.png" alt="Singup">
+                        <img class="img3" src="../src/img/singup-db-resul.png" alt="Singup resultado">
+                        <h3>Ruta Login</h3>
+                        <p>Vamos ahora a recibir si esta en la base de datos </p>
+                        <code class="carta-code-flask">
+                            <div class="posicion-flex-right">
+                                <div class="barra-lenguaje">
+                                    <span>python</span>
+                                </div>
+                            </div>
+                            <span class="verde">@app.route</span><span class="amarrillo">("/login", <span
+                                    class="azul">methods=</span>["GET","POST"] )</span>
+                            <br>
+                            <span class="azul">def </span><span class="verde">login</span>
+                            <span class="amarrillo">()</span>:
+                            <br>
+                            <span class="dentro-fun">
+                                <span class="rojo-claro">if </span>request.method == <span class="morado">"POST"</span>:
+                                <br>
+                                <span class="dentro-fun2">
+                                    user = Users.query.filter_by(username=request.form["username"]).first()
+                                </span>
+                                <br>
+                                <span class="dentro-fun2">
+                                    <span class="rojo-claro">if</span> user <span class="rojo-claro">and</span>
+                                    check_password_hash(user.password ,request.form[<span
+                                        class="morado">"password"</span>]):
+                                </span>
+                                <br>
+                                <span class="dentro-fun2">
+                                    <span class="fun">
+                                        <span class="rojo-claro">return </span><span class="morado">"Es
+                                            correcto"</span>
+                                    </span>
+                                </span>
+                                <br>
+                                <span class="dentro-fun2">
+                                    <span class="rojo-claro">return </span><span class="morado">"no es la misma
+                                        contrasena"</span>
+                                </span>
+                                <br>
+                            </span>
+                            <span class="dentro-fun">
+                                <span class="rojo-claro">return </span> render_template(<span
+                                    class="morado">"login.html"</span>)
+                            </span>
+                        </code>
+                        <p>
+                            El codigo indica que vamos a recibir un usuario y lo buscara en la base de datos, al igual que <span class="cafe">index.html</span>, el cual una vez que lo recibe verifica que si el usuario y la contraseña son la misma
+                        </p>
+                        <p>
+                            el codigo <span class="rojo-claro">check_password_hash(user.password ,request.form["password"])</span>, lo que hace es comparar si es la misma contraseña y en caso que asi sea dara un <span class="morado">"Es correcto</span>
+                        </p>
+                        <img class="img3" src="../src/img/login-db.png" alt="Login">
+                        <img class="img3" src="../src/img/login-True.png" alt="Login bien">
+                        <p>
+                            En caso que te equivoques en la contraseña dira
+                        </p>
+                        <img class="img3" src="../src/img/login-False.png" alt="Login mal">
                     </div>
                 </div>
             </div>
@@ -916,13 +1318,13 @@
                 <a class="pl-3" href="https://www.youtube.com/channel/UCoEIYAsPco1b1AKyDDVi3fg" alt="twitter"><i
                         class="fab fa-youtube"></i>
                 </a>
-                <a class="pl-3" href="https://twitter.com/blashtree"><i class="fab fa-twitter"></i></a>
+                <a class="pl-3" href="https://twitter.com/luis_Blash"><i class="fab fa-twitter"></i></a>
             </nav>
             <!-- navegacion menu -->
             <nav class="navegacion-footer pt-3">
                 <a href="../index.html" class="pl-4"> Inicio</a>
                 <a href="flask.html" class="pl-4"> Flask </a>
-                <a href="https://www.youtube.com/channel/UCoEIYAsPco1b1AKyDDVi3fg" class="pl-4">
+                <a href="about.html" class="pl-4">
                     Sobre nosotros
                 </a>
             </nav>
