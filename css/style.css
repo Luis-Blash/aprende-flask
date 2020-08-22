@@ -229,7 +229,7 @@ p {
 .carta-code-flask {
     width: 85%;
     padding: 10px 15px;
-    font-size: 0.9em;
+    font-size: 0.7em;
     color: #ffffff;
     line-height: 25px;
     background: linear-gradient(45deg, #101010, #2c3e50);
@@ -524,6 +524,11 @@ span.dentro-fun2>.fun {
 
     .carta-code {
         width: 50%;
+    }
+
+    .carta-code,
+    .carta-code-flask {
+        font-size: 0.9em;
     }
 
     /*  footer  */
