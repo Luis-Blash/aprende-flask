@@ -1,7 +1,17 @@
-# Aprende Flask
-<h2>Un sitio web que busca enseñar los conceptos basicos de como usar Flask el micro Framework de python para la creacion de una pagina web</h2>
-<p>Visita: <a href="https://aprende-flask.netlify.app/">Aprende Flask</a></p>
+# Aprende Flask 
+> El apredizaje de forma sencilla.
+---
+Aprende Flask es mi primera pagina hecha en *HTML* y *CSS*.
+Creada principalmente para poder dar a enseñar un tema el cual es usar el micro-framework de python para la creación de pagina web.
 
-<br>
-<img height="500" src="https://github.com/Luis-Blash/aprende-flask/blob/master/src/githubRead/aprende-flask.png" alr"Inicio">
-</br>
+Visita: [aprende-flask](https://aprende-flask.netlify.app/)
+
+## Construido con: 🛠
+
+Las herramientas utilizas para su creacion
+
+* HTML
+* CSS
+
+## Autor
+* **Luis Ocampo** - *Programacion backend* - [luisblash3](https://twitter.com/luisblash3)
